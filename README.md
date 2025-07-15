@@ -97,7 +97,6 @@ The images are load from `/data/original_dataset`.
 
 ### Original Dataset
 
-
 [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
 
 ```
@@ -124,6 +123,34 @@ data
 |-----|-----|-----|-- broken_small
 |-----|-----|-----|-- ...
 |-----|-- cable
+|-----|-- ...
+```
+
+[VisA](https://github.com/amazon-science/spot-diff)
+
+For VisA we divided the dataset according to defect categories, while dividing the good data in the original dataset into train and good. For downloading the split dataset, please refer to [here](https://huggingface.co/datasets/HUST-SLOW/SeaS/tree/main/VisA_type).
+
+```
+data
+|-- VisA
+|-----|-- candle
+|-----|-----|-- train
+|-----|-----|-----|-- good
+|-----|-----|-- test
+|-----|-----|-----|-- chunk_of_waax_missing
+|-----|-----|-----|-----|-- 000.png
+|-----|-----|-----|-----|-- 001.png
+|-----|-----|-----|-----|-- ...
+|-----|-----|-----|-- combined
+|-----|-----|-----|-- ...
+|-----|-----|-- ground_truth
+|-----|-----|-----|-- chunk_of_waax_missing
+|-----|-----|-----|-----|-- 000.png
+|-----|-----|-----|-----|-- 001.png
+|-----|-----|-----|-----|-- ...
+|-----|-----|-----|-- combined
+|-----|-----|-----|-- ...
+|-----|-- capsules
 |-----|-- ...
 ```
 
@@ -161,36 +188,6 @@ data
 |-----|-- ...
 ```
 
-[VisA](https://github.com/amazon-science/spot-diff)
-
-For VisA we divided the dataset according to defect categories, while dividing the good data in the original dataset into train and good. For downloading the split dataset, please refer to [here](https://huggingface.co/datasets/HUST-SLOW/SeaS/tree/main/VisA_type).
-
-```
-data
-|-- VisA
-|-----|-- candle
-|-----|-----|-- train
-|-----|-----|-----|-- good
-|-----|-----|-- test
-|-----|-----|-----|-- chunk_of_waax_missing
-|-----|-----|-----|-----|-- 000.png
-|-----|-----|-----|-----|-- 001.png
-|-----|-----|-----|-----|-- ...
-|-----|-----|-----|-- combined
-|-----|-----|-----|-- ...
-|-----|-----|-- ground_truth
-|-----|-----|-----|-- chunk_of_waax_missing
-|-----|-----|-----|-----|-- 000.png
-|-----|-----|-----|-----|-- 001.png
-|-----|-----|-----|-----|-- ...
-|-----|-----|-----|-- combined
-|-----|-----|-----|-- ...
-|-----|-- capsules
-|-----|-- ...
-```
-
-
-
 <span id='Dataset_generated_by_SeaS'/>
 
 ### SeaS generated Dataset
@@ -222,7 +219,29 @@ data
 |-----|-- ...
 ```
 
-MVtec 3d AD
+VisA
+
+```
+data
+|-- VisA
+|-----|-- candle
+|-----|-----|-- chunk_of_waax_missing
+|-----|-----|-----|-- image
+|-----|-----|-----|-----|-- 000.png
+|-----|-----|-----|-----|-- 001.png
+|-----|-----|-----|-----|-- ...
+|-----|-----|-----|-- mask
+|-----|-----|-----|-----|-- 000.png
+|-----|-----|-----|-----|-- 001.png
+|-----|-----|-----|-----|-- ...
+|-----|-----|-- combined
+|-----|-----|-- ...
+|-----|-- capsules
+|-----|-- ...
+```
+
+MVtec 3D AD
+
 ```
 data
 |-- mvtec_3d_AD
@@ -243,26 +262,6 @@ data
 |-----|-----|-----|-- image
 |-----|-----|-----|-- mask
 |-----|-----|-- ...
-|-----|-- ...
-```
-
-VisA
-```
-data
-|-- VisA
-|-----|-- candle
-|-----|-----|-- chunk_of_waax_missing
-|-----|-----|-----|-- image
-|-----|-----|-----|-----|-- 000.png
-|-----|-----|-----|-----|-- 001.png
-|-----|-----|-----|-----|-- ...
-|-----|-----|-----|-- mask
-|-----|-----|-----|-----|-- 000.png
-|-----|-----|-----|-----|-- 001.png
-|-----|-----|-----|-----|-- ...
-|-----|-----|-- combined
-|-----|-----|-- ...
-|-----|-- capsules
 |-----|-- ...
 ```
 
